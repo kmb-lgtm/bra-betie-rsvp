@@ -293,6 +293,11 @@
       </select>
     </div>
 
+    <div style="position:absolute; left:-9999px; opacity:0; height:0; overflow:hidden;" aria-hidden="true">
+      <label for="website">Website</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
     <button type="submit" id="submitBtn">Submit RSVP</button>
     <div class="status" id="statusMsg"></div>
   </form>
@@ -307,6 +312,8 @@
 
 <script>
   const ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbyxxc9Zq3aro66oBKlPtDLWyjRi7hK1KPXQ920rYg4DrRIZ3mz9WfMabOCw5OKzTjaabw/exec";
+  // Must match the SHARED_SECRET value set in your Apps Script.
+  const SHARED_SECRET = "brabetie-vol001-2026";
 
   const form = document.getElementById('rsvpForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -343,6 +350,14 @@
     const referralInput = document.querySelector('input[name="referral"]:checked');
     const referral = referralInput ? referralInput.value : '';
     const futureEvents = document.getElementById('futureEvents').value;
+    const website = document.getElementById('website').value; // honeypot
+
+    // Silently drop obvious bot submissions without alerting the bot.
+    if (website) {
+      form.classList.add('hide');
+      confirmMsg.classList.add('show');
+      return;
+    }
 
     let valid = true;
     setInvalid('field-name', false);
@@ -363,7 +378,7 @@
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ fullName, email, attendance, referral, futureEvents })
+        body: JSON.stringify({ fullName, email, attendance, referral, futureEvents, secret: SHARED_SECRET })
       });
 
       form.classList.add('hide');

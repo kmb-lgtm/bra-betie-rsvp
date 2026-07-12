@@ -6,17 +6,14 @@
 <title>BRA BƐTIE — Volume 001 | RSVP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #faf6ec;
+    --cream: #faf8f4;
     --paper: #ffffff;
-    --ink: #262117;
-    --ink-soft: #5c5546;
-    --olive: #3f4f31;
-    --mustard: #d9a91f;
-    --line: #e6ddc8;
-    --error: #b3492f;
+    --ink: #24221d;
+    --line: #dedad0;
+    --error: #a3402c;
   }
 
   *{ box-sizing:border-box; }
@@ -27,55 +24,58 @@
     color: var(--ink);
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    line-height:1.6;
+    line-height:1.65;
   }
 
   .banner{
     width:100%;
     display:block;
-    max-height: 320px;
+    max-height: 280px;
     object-fit: cover;
   }
 
   .wrap{
-    max-width: 620px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 48px 24px 90px;
+    padding: 44px 24px 80px;
   }
 
   .eyebrow{
-    color: var(--mustard);
-    font-size: 12px;
-    letter-spacing: 0.22em;
+    color: var(--ink);
+    opacity: 0.55;
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
   }
 
   h1{
-    font-family:'Fraunces', serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
-    font-size: clamp(34px, 7vw, 46px);
-    letter-spacing: -0.01em;
-    margin: 0 0 4px;
+    font-size: clamp(28px, 6vw, 36px);
+    letter-spacing: 0.01em;
+    margin: 0 0 6px;
     color: var(--ink);
   }
   h1 em{
-    font-style: italic;
-    font-weight: 400;
-    color: var(--olive);
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ink);
   }
 
   .subline{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: var(--ink-soft);
-    margin: 0 0 28px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--ink);
+    opacity: 0.6;
+    margin: 0 0 30px;
   }
 
-  .intro p{ margin: 0 0 14px; color: var(--ink-soft); font-size: 15px; }
-  .intro strong{ color: var(--ink); font-weight: 600; }
+  .intro p{ margin: 0 0 14px; color: var(--ink); opacity: 0.75; font-size: 14.5px; }
+  .intro strong{ color: var(--ink); opacity:1; font-weight: 600; }
 
   .facts{
     display:flex;
@@ -85,26 +85,28 @@
   }
   .fact{
     border: 1px solid var(--line);
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 7px 13px;
     font-size: 12.5px;
     letter-spacing: 0.01em;
-    color: var(--olive);
+    color: var(--ink);
     background: var(--paper);
   }
 
   .divider{
     border: none;
     border-top: 1px solid var(--line);
-    margin: 34px 0;
+    margin: 32px 0;
   }
 
   .tagline{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--olive);
-    margin: 0 0 34px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: var(--ink);
+    opacity: 0.7;
+    margin: 0 0 32px;
   }
 
   form{
@@ -138,14 +140,14 @@
     appearance:none;
   }
   .field select{
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1L7 7L13 1' stroke='%233f4f31' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1L7 7L13 1' stroke='%2324221d' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
     background-repeat:no-repeat;
     background-position: right 14px center;
   }
   .field input:focus, .field select:focus{
-    border-color: var(--olive);
+    border-color: var(--ink);
   }
-  .field input::placeholder{ color: #b7ae99; }
+  .field input::placeholder{ color: #b3ab99; }
 
   .radio-group{ display:flex; flex-direction:column; gap:8px; }
   .radio-option{
@@ -153,16 +155,16 @@
     align-items:center;
     gap:11px;
     border: 1px solid var(--line);
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 11px 14px;
     cursor:pointer;
     background: var(--paper);
     transition: border-color .15s ease;
   }
-  .radio-option:hover{ border-color: var(--olive); }
-  .radio-option input{ accent-color: var(--olive); width:15px; height:15px; }
+  .radio-option:hover{ border-color: var(--ink); }
+  .radio-option input{ accent-color: var(--ink); width:15px; height:15px; }
   .radio-option span{ font-size: 14px; color: var(--ink); }
-  .radio-option.checked{ border-color: var(--olive); }
+  .radio-option.checked{ border-color: var(--ink); }
 
   .error-msg{
     display:none;
@@ -175,18 +177,19 @@
 
   button[type="submit"]{
     margin-top: 6px;
-    background: var(--olive);
+    background: var(--ink);
     color: var(--cream);
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 14px 26px;
-    font-family:'Work Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14.5px;
+    letter-spacing: 0.02em;
     cursor:pointer;
     transition: opacity .15s ease;
   }
-  button[type="submit"]:hover{ opacity: 0.9; }
+  button[type="submit"]:hover{ opacity: 0.85; }
   button[type="submit"]:disabled{ opacity: 0.5; cursor: not-allowed; }
 
   .status{
@@ -204,13 +207,13 @@
   }
   .confirm.show{ display:block; }
   .confirm .mark{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: 26px;
-    color: var(--olive);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--ink);
     margin-bottom: 12px;
   }
-  .confirm p{ color: var(--ink-soft); font-size: 14.5px; max-width: 420px; margin: 0 auto; }
+  .confirm p{ color: var(--ink); opacity: 0.7; font-size: 14.5px; max-width: 420px; margin: 0 auto; }
 
   form.hide{ display:none; }
 
@@ -219,7 +222,15 @@
     padding-top: 18px;
     border-top: 1px solid var(--line);
     font-size: 11.5px;
-    color: #a39c88;
+    color: var(--ink);
+    opacity: 0.4;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 32px 18px 64px; }
+    .banner{ max-height: 200px; }
+    .facts{ gap: 6px; }
+    .fact{ font-size: 12px; padding: 6px 11px; }
   }
 </style>
 </head>
